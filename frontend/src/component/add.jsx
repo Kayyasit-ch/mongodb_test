@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './css/add.css';
 
 const AddEmployee = () => {
     const [name, setName] = useState("");
@@ -40,7 +41,8 @@ const AddEmployee = () => {
             setSuccess(true);
             setTimeout(() => {
                 setSuccess(false);
-            window.location.reload();}, 2000);
+                window.location.reload();
+            }, 2000);
         } catch (err) {
             setError(err.message);
         } finally {
@@ -49,13 +51,12 @@ const AddEmployee = () => {
     };
 
     return (
-        <div>
+        <div className="add-container">
             <h1>เพิ่มพนักงาน</h1>
-            <form onSubmit={handleSubmit}>
+            <form className="add-form" onSubmit={handleSubmit}>
                 <input placeholder="ชื่อ" value={name} onChange={(e) => setName(e.target.value)} />
                 <input placeholder="เงินเดือน" value={salary} onChange={(e) => setSalary(e.target.value)} />
                 <input placeholder="ที่อยู่" value={address} onChange={(e) => setAddress(e.target.value)} />
-
                 <input
                     placeholder="น้ำหนัก"
                     value={general.weight}
@@ -75,24 +76,20 @@ const AddEmployee = () => {
                     <option value="female">หญิง</option>
                     <option value="other">อื่นๆ</option>
                 </select>
-
                 <input
                     placeholder="Social (คั่นด้วย ,)"
                     value={social.join(",")}
                     onChange={(e) => setSocial(e.target.value.split(","))}
                 />
-
                 <input
                     placeholder="แผนก"
                     value={department}
                     onChange={(e) => setDepartment(e.target.value)}
                 />
-
                 <button type="submit" disabled={loading}>
                     {loading ? "กำลังส่ง..." : "เพิ่มพนักงาน"}
                 </button>
             </form>
-
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>เพิ่มพนักงานเรียบร้อยแล้ว</p>}
         </div>

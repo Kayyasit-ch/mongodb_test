@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams ,useNavigate} from "react-router-dom";
 import './css/update.css';
 
 const UpdateEmployee = () => {
-    const { name } = useParams(); // ดึง name จาก URL
+    const { name } = useParams();
+    const navigate = useNavigate();
     const [salary, setSalary] = useState("");
     const [address, setAddress] = useState("");
     const [general, setGeneral] = useState({ weight: "", height: "", gender: "" });
@@ -60,6 +61,7 @@ const UpdateEmployee = () => {
             setSuccess(true);
             setTimeout(() => {
                 setSuccess(false);
+                navigate("/edit"); 
             }, 2000);
         } catch (err) {
             setError(err.message);
@@ -69,7 +71,7 @@ const UpdateEmployee = () => {
     };
 
     return (
-        <div>
+        <div className="update-container">
             <h1>แก้ไขข้อมูลพนักงาน: {name}</h1>
             <form onSubmit={handleSubmit}>
                 <div className="input-group">
@@ -112,9 +114,9 @@ const UpdateEmployee = () => {
                     onChange={(e) => setGeneral({ ...general, gender: e.target.value })}
                 >
                     <option value="">เพศ</option>
-                    <option value="male">ชาย</option>
-                    <option value="female">หญิง</option>
-                    <option value="other">อื่นๆ</option>
+                    <option value="ชาย">ชาย</option>
+                    <option value="หญิง">หญิง</option>
+                    <option value="อื่นๆ">อื่นๆ</option>
                 </select>
                 </div>
                 <div className="input-group">

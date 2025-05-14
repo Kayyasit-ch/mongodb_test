@@ -26,30 +26,32 @@ const Employees = () => {
     if (error) return <p>{error}</p>;
 
     return (
-        <div class='container'>
-            <h1 class='text'> ข้อมูลพนักงาน</h1>
-            <table border="1" cellPadding="10" class='table'>
-                <thead>
-                    <tr>
-                        <th>ชื่อ</th>
-                        <th>เงินเดือน</th>
-                        <th>ที่อยู่</th>
-                        <th>เพศ</th>
-                        <th>แผนก</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {employees.map((employee) => (
-                        <tr key={employee._id}>
-                            <td>{employee.name}</td>
-                            <td>{employee.salary}</td>
-                            <td>{employee.address}</td>
-                            <td>{employee.general?.gender || '-'}</td>
-                            <td>{employee.department}</td>
+        <div className="container">
+            <h1 className="text">ข้อมูลพนักงาน</h1>
+            <div className="table-wrapper">
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>ชื่อ</th>
+                            <th>เงินเดือน</th>
+                            <th>ที่อยู่</th>
+                            <th>เพศ</th>
+                            <th>แผนก</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {employees.map((employee) => (
+                            <tr key={employee._id}>
+                                <td>{employee.name}</td>
+                                <td>{employee.salary}</td>
+                                <td>{employee.address}</td>
+                                <td>{employee.general?.gender || '-'}</td>
+                                <td>{employee.department}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

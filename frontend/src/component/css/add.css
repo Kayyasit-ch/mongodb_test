@@ -1,4 +1,4 @@
-.update-container {
+.add-container {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
@@ -8,83 +8,68 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-h1 {
+.add-container h1 {
   text-align: center;
   color: #004080;
   margin-bottom: 30px;
   font-size: 26px;
 }
 
-.input-group {
-  margin-bottom: 20px;
+.add-form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
-.label {
-  font-size: 16px;
-  margin-bottom: 8px;
-  color: #333;
-}
-
-input,
-select {
+.add-form input,
+.add-form select {
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
   border-radius: 8px;
+  border: 1px solid #ccc;
   transition: border 0.3s ease;
 }
 
-input:focus,
-select:focus {
+.add-form input:focus,
+.add-form select:focus {
   border-color: #007bff;
   outline: none;
 }
 
-.btd {
-  padding: 12px 20px;
+.add-form button {
+  padding: 12px;
   background-color: #007bff;
   color: white;
   font-size: 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  width: 100%;
-  margin-top: 10px;
   transition: background-color 0.3s ease;
 }
 
-.btd:hover {
+.add-form button:hover {
   background-color: #0056b3;
 }
 
 p {
   text-align: center;
   font-size: 14px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
-/* ✅ Responsive Design */
+/* ✅ Responsive */
 @media (max-width: 768px) {
-  .update-container {
+  .add-container {
     padding: 15px;
   }
 
-  h1 {
+  .add-container h1 {
     font-size: 22px;
   }
 
-  .label {
-    font-size: 15px;
-  }
-
-  input,
-  select {
-    font-size: 15px;
-  }
-
-  .btd {
+  .add-form input,
+  .add-form select,
+  .add-form button {
     font-size: 15px;
   }
 }

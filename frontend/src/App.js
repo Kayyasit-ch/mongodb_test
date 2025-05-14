@@ -10,21 +10,15 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav class='navbar'>
-          <div>
-            <ul>
-              <li>
-                <Link to="/">ข้อมูลพนักงาน</Link>
-              </li>
-              <li>
-                <Link to="/add">เพิ่มพนักงาน</Link>
-              </li>
-              <li>
-                <Link to="/edit">แก้ไขข้อมูลพนักงาน</Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
+          <nav className="navbar">
+            <div className="navbar-container">
+              <ul className="navbar-menu">
+                <li><Link to="/">ข้อมูลพนักงาน</Link></li>
+                <li><Link to="/add">เพิ่มพนักงาน</Link></li>
+                <li><Link to="/edit">แก้ไขข้อมูลพนักงาน</Link></li>
+              </ul>
+            </div>
+          </nav>
 
         <Routes>
           <Route path="/" element={<Employees />} />
