@@ -1,0 +1,26 @@
+.input-group{
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label{
+   margin-right: 10px;
+}
+
+.btd {
+    width: 150px;
+    height: 40px;
+    background-color: #4CAF50;
+    color: white; /* สีตัวอักษร */
+    border: none; /* ไม่เอาเส้นขอบ */
+    border-radius: 8px; /* ขอบมน */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer เมื่อชี้ */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    transition: background-color 0.3s ease; /* ใส่ transition เมื่อ hover */
+}
+
+.btd:hover {
+    background-color: #45a049; /* สีเขียวเข้มขึ้นเมื่อ hover */
+}
